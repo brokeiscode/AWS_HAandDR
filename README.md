@@ -14,6 +14,8 @@ This lab demonstrates how to build a highly available and disaster-resilient app
 **1: Set Up DynamoDB Global Tables**
 - From **AWS Management Console**, navigate to **DynamoDB**.
 - Create a new table in the primary region of your choice.
+    - **Table name**: `HighAvailabilityTable`.
+    - **Partition key**: `ItemId` (String).
 - Next, navigate to the **Global Tables** tab and click **Create replica** in a secondary region of your choice.
 - Wait for the replica to be active.
 
@@ -39,7 +41,6 @@ This lab demonstrates how to build a highly available and disaster-resilient app
     - Click **Change default execution role** and select **Use an existing role**
     - Search the name of the execution role you created above and select it.
     - Update the **Code** with the `read_function.py` file in this repository (copy and paste).
-    - Edit code and input correct names.
     - **Deploy**
 - Repeat the entire above process for the second lambda function, using the `write_function.py` code.
 - Next, repeat and deploy the two functions in the Secondary region.
